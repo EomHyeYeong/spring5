@@ -11,6 +11,7 @@ import chap03.config.AppCtx;
 import chap03.spring.exception.DuplicateMemberException;
 import chap03.spring.exception.MemberNotFoundException;
 import chap03.spring.exception.WrongIdPasswordException;
+import chap03.spring.printer.MemberInfoPrinter;
 import chap03.spring.printer.MemberListPrinter;
 import chap03.spring.register.RegisterRequest;
 import chap03.spring.service.ChangePasswordService;
@@ -41,6 +42,9 @@ public class MainForSpring {
 				continue;
 			} else if (command.equals("list")) {
 				processListCommand();
+				continue;
+			} else if (command.startsWith("info")) {
+				processInfoCommand(command.split(" "));
 				continue;
 			}
 			printHelp();
@@ -107,6 +111,16 @@ public class MainForSpring {
 		MemberListPrinter listPrinter = 
 				ctx.getBean("listPrinter", MemberListPrinter.class);
 		listPrinter.printAll();
+	}
+	
+	private static void processInfoCommand(String[] arg) {
+		if (arg.length != 2) {
+			printHelp();
+			return;
+		}
+		MemberInfoPrinter infoPrinter =
+				ctx.getBean("infoPrinter", MemberInfoPrinter.class);
+		infoPrinter.printMemberInfo(arg[1]);
 	}
 
 }
