@@ -1,4 +1,4 @@
-package chap03.spring;
+package chap03.spring.register;
 
 public class RegisterRequest {	// 회원 가입 처리 관련 클래스
 	
@@ -30,7 +30,7 @@ public class RegisterRequest {	// 회원 가입 처리 관련 클래스
 		this.confirmPassword = confirmPassword;
 	}
 	public String getName() {
-		return email;
+		return name;
 	}
 	
 	public void setName(String name) {

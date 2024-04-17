@@ -1,6 +1,8 @@
-package chap03.spring;
+package chap03.spring.member;
 
 import java.time.LocalDateTime;
+
+import chap03.spring.exception.WrongIdPasswordException;
 
 public class Member {	// 회원 데이터 관련 클래스
 	

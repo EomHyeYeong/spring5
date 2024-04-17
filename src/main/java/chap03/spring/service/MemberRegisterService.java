@@ -1,6 +1,11 @@
-package chap03.spring;
+package chap03.spring.service;
 
 import java.time.LocalDateTime;
+
+import chap03.spring.exception.DuplicateMemberException;
+import chap03.spring.member.Member;
+import chap03.spring.member.MemberDao;
+import chap03.spring.register.RegisterRequest;
 
 public class MemberRegisterService {	// 회원 가입 처리 관련 클래스
 	

@@ -3,9 +3,11 @@ package chap03.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import chap03.spring.ChangePasswordService;
-import chap03.spring.MemberDao;
-import chap03.spring.MemberRegisterService;
+import chap03.spring.member.MemberDao;
+import chap03.spring.printer.MemberListPrinter;
+import chap03.spring.printer.MemberPrinter;
+import chap03.spring.service.ChangePasswordService;
+import chap03.spring.service.MemberRegisterService;
 
 @Configuration
 public class AppCtx {
@@ -25,6 +27,16 @@ public class AppCtx {
 		ChangePasswordService pwdSvc = new ChangePasswordService();
 		pwdSvc.setMemberDao(memberDao());
 		return pwdSvc;
+	}
+	
+	@Bean
+	public MemberPrinter memberPrinter() {
+		return new MemberPrinter();
+	}
+	
+	@Bean
+	public MemberListPrinter listPrinter() {
+		return new MemberListPrinter(memberDao(), memberPrinter());
 	}
 
 }

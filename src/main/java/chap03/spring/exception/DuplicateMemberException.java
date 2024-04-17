@@ -1,4 +1,4 @@
-package chap03.spring;
+package chap03.spring.exception;
 
 public class DuplicateMemberException  extends RuntimeException{
 	

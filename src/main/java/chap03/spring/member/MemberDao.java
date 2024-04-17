@@ -1,5 +1,6 @@
-package chap03.spring;
+package chap03.spring.member;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -18,6 +19,10 @@ public class MemberDao {	// 회원 데이터 관련 클래스
 	
 	public void update (Member member) {
 		map.put(member.getEmail(), member);
+	}
+	
+	public Collection<Member> selectAll() {
+		return map.values();
 	}
 
 }

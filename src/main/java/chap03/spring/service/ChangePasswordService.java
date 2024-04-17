@@ -1,4 +1,8 @@
-package chap03.spring;
+package chap03.spring.service;
+
+import chap03.spring.exception.MemberNotFoundException;
+import chap03.spring.member.Member;
+import chap03.spring.member.MemberDao;
 
 public class ChangePasswordService {	// 암호 변경 관련 클래스
 	

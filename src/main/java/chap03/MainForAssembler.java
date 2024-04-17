@@ -5,12 +5,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import chap03.assembler.Assembler;
-import chap03.spring.ChangePasswordService;
-import chap03.spring.DuplicateMemberException;
-import chap03.spring.MemberNotFoundException;
-import chap03.spring.MemberRegisterService;
-import chap03.spring.RegisterRequest;
-import chap03.spring.WrongIdPasswordException;
+import chap03.spring.exception.DuplicateMemberException;
+import chap03.spring.exception.MemberNotFoundException;
+import chap03.spring.exception.WrongIdPasswordException;
+import chap03.spring.register.RegisterRequest;
+import chap03.spring.service.ChangePasswordService;
+import chap03.spring.service.MemberRegisterService;
 
 public class MainForAssembler {
 

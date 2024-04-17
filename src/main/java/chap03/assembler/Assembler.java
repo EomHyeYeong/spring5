@@ -1,8 +1,8 @@
 package chap03.assembler;
 
-import chap03.spring.ChangePasswordService;
-import chap03.spring.MemberDao;
-import chap03.spring.MemberRegisterService;
+import chap03.spring.member.MemberDao;
+import chap03.spring.service.ChangePasswordService;
+import chap03.spring.service.MemberRegisterService;
 
 public class Assembler {	// 객체 조립기
 	
