@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import chap03.config.AppConfImport;
 import chap03.config.AppCtx;
 import chap03.spring.exception.DuplicateMemberException;
 import chap03.spring.exception.MemberNotFoundException;
@@ -23,7 +24,7 @@ public class MainForSpring {
 	private static ApplicationContext ctx = null;
 
 	public static void main(String[] args) throws IOException {
-		ctx = new AnnotationConfigApplicationContext(AppCtx.class);
+		ctx = new AnnotationConfigApplicationContext(AppConfImport.class);
 		
 		BufferedReader reader = 
 				new BufferedReader(new InputStreamReader(System.in));
