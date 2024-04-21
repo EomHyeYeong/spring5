@@ -1,5 +1,7 @@
 package chap03.spring.printer;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import chap03.spring.member.Member;
 import chap03.spring.member.MemberDao;
 
@@ -18,10 +20,12 @@ public class MemberInfoPrinter {
 		System.out.println();
 	}
 	
+	@Autowired
 	public void setMemberDao(MemberDao memberDao) {
 		this.memDao = memberDao;
 	}
 	
+	@Autowired
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}

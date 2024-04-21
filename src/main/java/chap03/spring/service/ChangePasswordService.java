@@ -1,11 +1,14 @@
 package chap03.spring.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import chap03.spring.exception.MemberNotFoundException;
 import chap03.spring.member.Member;
 import chap03.spring.member.MemberDao;
 
 public class ChangePasswordService {	// 암호 변경 관련 클래스
-	
+
+	@Autowired
 	private MemberDao memberDao;
 	
 	public void changePassword(String email, String oldPwd, String newPwd) {
