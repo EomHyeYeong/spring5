@@ -1,5 +1,6 @@
 package chap03.config;
 
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -7,6 +8,7 @@ import chap03.spring.member.MemberDao;
 import chap03.spring.printer.MemberInfoPrinter;
 import chap03.spring.printer.MemberListPrinter;
 import chap03.spring.printer.MemberPrinter;
+import chap03.spring.printer.MemberSummaryPrinter;
 import chap03.spring.printer.VersionPrinter;
 import chap03.spring.service.ChangePasswordService;
 import chap03.spring.service.MemberRegisterService;
@@ -32,9 +34,21 @@ public class AppCtx {
 		return new ChangePasswordService();
 	}
 	
+//	@Bean
+//	public MemberPrinter memberPrinter() {
+//		return new MemberPrinter();
+//	}
+	
 	@Bean
-	public MemberPrinter memberPrinter() {
+	@Qualifier("printer")
+	public MemberPrinter memberPrinter1() {
 		return new MemberPrinter();
+	}
+	
+	@Bean
+	@Qualifier("summaryPrinter")
+	public MemberSummaryPrinter memberPrinter2() {
+		return new MemberSummaryPrinter();
 	}
 	
 	@Bean
@@ -44,9 +58,9 @@ public class AppCtx {
 	
 	@Bean
 	public MemberInfoPrinter infoPrinter() {
-//		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
+		MemberInfoPrinter infoPrinter = new MemberInfoPrinter();
 //		infoPrinter.setMemberDao(memberDao());
-//		infoPrinter.setPrinter(memberPrinter());
+		infoPrinter.setPrinter(memberPrinter2());
 //		return infoPrinter;
 		return new MemberInfoPrinter();
 	}

@@ -1,6 +1,7 @@
 package chap03.spring.printer;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import chap03.spring.member.Member;
 import chap03.spring.member.MemberDao;
@@ -26,6 +27,7 @@ public class MemberInfoPrinter {
 	}
 	
 	@Autowired
+	@Qualifier("printer")
 	public void setPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}

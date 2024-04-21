@@ -3,6 +3,7 @@ package chap03.spring.printer;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 
 import chap03.spring.member.Member;
 import chap03.spring.member.MemberDao;
@@ -32,7 +33,9 @@ public class MemberListPrinter {
 	}
 	
 	@Autowired
+	@Qualifier("printer")
 	public void setMemberPrinter(MemberPrinter printer) {
 		this.printer = printer;
 	}
+
 }
